@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Autonomous"
+        android:id="@+id/auto"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:id="@+id/back"
+        android:layout_marginBottom="75dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/auto"
+        android:layout_toStartOf="@+id/auto" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="next"
+        android:id="@+id/next"
+        android:layout_alignTop="@+id/back"
+        android:layout_toRightOf="@+id/auto"
+        android:layout_toEndOf="@+id/auto" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Team 1"
+        android:id="@+id/team1"
+        android:layout_marginTop="63dp"
+        android:layout_below="@+id/auto"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Team 3"
+        android:id="@+id/team3"
+        android:layout_below="@+id/team2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="52dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Team 2"
+        android:id="@+id/team2"
+        android:layout_below="@+id/team1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="49dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Team 4"
+        android:id="@+id/team4"
+        android:layout_below="@+id/team3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="48dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RescueBeacon"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/auto"
+        android:layout_toRightOf="@+id/team1"
+        android:layout_toEndOf="@+id/team1"
+        android:layout_marginTop="26dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Climbers"
+        android:id="@+id/textView3"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_alignRight="@+id/auto"
+        android:layout_alignEnd="@+id/auto" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Parking"
+        android:id="@+id/textView4"
+        android:layout_alignTop="@+id/textView3"
+        android:layout_alignRight="@+id/next"
+        android:layout_alignEnd="@+id/next"
+        android:layout_alignBottom="@+id/textView3" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/resteam1"
+        android:hint="Y/N"
+        android:layout_alignTop="@+id/team1"
+        android:layout_alignRight="@+id/textView2"
+        android:layout_alignEnd="@+id/textView2"
+        android:layout_alignLeft="@+id/auto"
+        android:layout_alignStart="@+id/auto" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/resteam2"
+        android:hint="Y/N"
+        android:layout_alignTop="@+id/team2"
+        android:layout_alignLeft="@+id/resteam1"
+        android:layout_alignStart="@+id/resteam1"
+        android:layout_alignRight="@+id/resteam1"
+        android:layout_alignEnd="@+id/resteam1" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/resteam3"
+        android:hint="Y/N"
+        android:layout_alignTop="@+id/team3"
+        android:layout_alignLeft="@+id/resteam2"
+        android:layout_alignStart="@+id/resteam2"
+        android:layout_alignRight="@+id/resteam2"
+        android:layout_alignEnd="@+id/resteam2" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/resteam4"
+        android:hint="Y/N"
+        android:layout_alignTop="@+id/team4"
+        android:layout_alignLeft="@+id/resteam3"
+        android:layout_alignStart="@+id/resteam3"
+        android:layout_alignRight="@+id/resteam3"
+        android:layout_alignEnd="@+id/resteam3" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:hint="0-2"
+        android:id="@+id/climbteam1"
+        android:layout_alignTop="@+id/resteam1"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignStart="@+id/textView3"
+        android:layout_alignRight="@+id/auto"
+        android:layout_alignEnd="@+id/auto" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:hint="0-2"
+        android:id="@+id/climbteam2"
+        android:layout_alignBottom="@+id/resteam2"
+        android:layout_alignRight="@+id/auto"
+        android:layout_alignEnd="@+id/auto"
+        android:layout_alignLeft="@+id/climbteam1"
+        android:layout_alignStart="@+id/climbteam1" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:hint="0-2"
+        android:id="@+id/climbteam3"
+        android:layout_alignBottom="@+id/resteam3"
+        android:layout_alignLeft="@+id/climbteam2"
+        android:layout_alignStart="@+id/climbteam2"
+        android:layout_toLeftOf="@+id/next"
+        android:layout_toStartOf="@+id/next" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:hint="0-2"
+        android:id="@+id/climbteam4"
+        android:layout_alignBottom="@+id/resteam4"
+        android:layout_alignLeft="@+id/climbteam3"
+        android:layout_alignStart="@+id/climbteam3"
+        android:layout_toLeftOf="@+id/next"
+        android:layout_toStartOf="@+id/next" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText2"
+        android:layout_alignTop="@+id/climbteam1"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_alignStart="@+id/textView4"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText3"
+        android:layout_alignBottom="@+id/climbteam2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignLeft="@+id/editText2"
+        android:layout_alignStart="@+id/editText2" />
+
+</RelativeLayout>

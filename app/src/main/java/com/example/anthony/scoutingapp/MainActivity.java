@@ -2,6 +2,8 @@ package com.example.anthony.scoutingapp;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -30,9 +32,11 @@ public class MainActivity extends Activity {
     String[] turtlestwo = new String[5];
     String[] turtles = new String[5];
     String[] newstring = new String[5];
+    ViewPager viewPager;
     JSONArray teamstwo = new JSONArray();
     String teamstring, matchnumberq;
     TextView text;
+    TabLayout tabLayout;
     ParseObject teamquery,matchinfo;
     String list;
     List<Object> al = new ArrayList<>();
@@ -40,7 +44,7 @@ public class MainActivity extends Activity {
     String[] stringarray = new String[5];
     private Spinner spinner, spinner2, spinner3, spinner4;
     String[] teamsarray;
-
+    int b;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,6 +81,7 @@ public class MainActivity extends Activity {
 
             }
         });
+
         Button update = (Button) findViewById(R.id.update);
         update.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -100,6 +105,7 @@ public class MainActivity extends Activity {
 
                             loaded = true;
 
+
                         } else {
 
                             Log.i("qqq", String.valueOf(e));
@@ -118,6 +124,8 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
 
                 setContentView(R.layout.activity_main2);
+
+
 
 
                 text = (TextView) findViewById(R.id.text);
@@ -193,6 +201,7 @@ public class MainActivity extends Activity {
                     public void onClick(View v) {
                         //replace with loop when not lazy
                         teamsarray = new String[4];
+
                         teamsarray[0] = turtles[0];
                         teamsarray[1] = turtles[1];
                         teamsarray[2] = turtles[2];
@@ -205,6 +214,41 @@ public class MainActivity extends Activity {
                         matchinfo.add("Teams", teamsarray[3]);
                         matchinfo.saveInBackground();
                         matchnumber.setText("");
+                        setContentView(R.layout.activity_main3);
+
+
+                        TextView team1 = (TextView) findViewById(R.id.team1);
+                        TextView team2 = (TextView) findViewById(R.id.team2);
+                        TextView team3 = (TextView) findViewById(R.id.team3);
+                        TextView team4 = (TextView) findViewById(R.id.team4);
+                        team1.setText(teamsarray[0]);
+                        team2.setText(teamsarray[1]);
+                        team3.setText(teamsarray[2]);
+                        team4.setText(teamsarray[3]);
+
+
+                        Button back = (Button) findViewById(R.id.back);
+                        back.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                setContentView(R.layout.activity_main2);
+
+                            }
+                        });
+
+                        Button next = (Button) findViewById(R.id.next);
+                        next.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                setContentView(R.layout.activity_main4);
+
+
+
+
+                            }
+                        });
+
+
                     }
                 });
             }
